@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Arts & Culture Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
+</head>
+<body>
+  <!-- Skip Navigation Link -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Header with Navigation -->
+  <header role="banner">
+    <h1>Community Arts & Culture Portal</h1>
+    <nav role="navigation" aria-label="Main Navigation">
+      <ul>
+        <li><a href="#home" accesskey="h">Home</a></li>
+        <li><a href="#events" accesskey="e">Events</a></li>
+        <li><a href="#artists" accesskey="a">Artists</a></li>
+        <li><a href="#contact" accesskey="c">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <!-- Welcome Section -->
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>Discover local art events, cultural activities, and artist profiles. Our site is fully accessible to all users, including those using assistive technology.</p>
+    </section>
+
+    <!-- Events Section with Filter and Submission -->
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      
+      <!-- Filter Input -->
+      <div class="filter-container">
+        <label for="event-filter">Filter events:</label>
+        <input type="text" id="event-filter" placeholder="Type to filter events..." aria-describedby="filter-status">
+      </div>
+      <div id="filter-status" aria-live="polite" class="visually-hidden"></div>
+
+      <!-- Submit Your Event Button -->
+      <button id="open-submit-modal" class="primary-button">Submit Your Event</button>
+      
+      <div class="event-list">
+        <!-- Updated event items -->
+        <article class="event-item" tabindex="0">
+          <h3>Art Basel Miami Beach</h3>
+          <p><strong>Date:</strong> December 7, 2025</p>
+          <p><strong>Location:</strong> Miami Beach Convention Center</p>
+
+          <div class="review-widget" data-event-id="artbasel">
+            <span class="stars">
+              <span data-value="1">☆</span>
+              <span data-value="2">☆</span>
+              <span data-value="3">☆</span>
+              <span data-value="4">☆</span>
+              <span data-value="5">☆</span>
+            </span>
+            <div class="review-count"></div>
+          </div>
+          
+        </article>
+        <article class="event-item" tabindex="0">
+          <h3>Sculpture in the Park 2025</h3>
+          <p><strong>Date:</strong> May 22, 2025</p>
+          <p><strong>Location:</strong> Central City Park</p>
+
+          <div class="review-widget" data-event-id="artbasel">
+            <span class="stars">
+              <span data-value="1">☆</span>
+              <span data-value="2">☆</span>
+              <span data-value="3">☆</span>
+              <span data-value="4">☆</span>
+              <span data-value="5">☆</span>
+            </span>
+            <div class="review-count"></div>
+          </div>
+          
+        </article>
+        <article class="event-item" tabindex="0">
+          <h3>Urban Photography Walk</h3>
+          <p><strong>Date:</strong> June 1, 2025</p>
+          <p><strong>Location:</strong> Downtown</p>
+
+          <div class="review-widget" data-event-id="artbasel">
+            <span class="stars">
+              <span data-value="1">☆</span>
+              <span data-value="2">☆</span>
+              <span data-value="3">☆</span>
+              <span data-value="4">☆</span>
+              <span data-value="5">☆</span>
+            </span>
+            <div class="review-count"></div>
+          </div>
+          
+        </article>
+        <article class="event-item" tabindex="0">
+          <h3>Brooklyn Arts Fair</h3>
+          <p><strong>Date:</strong> June 10, 2025</p>
+          <p><strong>Location:</strong> Brooklyn Navy Yard</p>
+
+          <div class="review-widget" data-event-id="artbasel">
+            <span class="stars">
+              <span data-value="1">☆</span>
+              <span data-value="2">☆</span>
+              <span data-value="3">☆</span>
+              <span data-value="4">☆</span>
+              <span data-value="5">☆</span>
+            </span>
+            <div class="review-count"></div>
+          </div>
+          
+        </article>
+      </div>
+    </section>
+
+    <section id="event-map">
+      <h2>Event Map</h2>
+      <div id="map" style="height: 400px; width: 100%; border-radius:4px;"></div>
+    </section>
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    ></script>    
+
+<!-- Artists Section -->
+<section id="artists">
+    <h2>Featured Artists</h2>
+    <div class="artist-list">
+      <!-- Artist 1 -->
+      <article class="artist-item" tabindex="0">
+        <h3>Ai Weiwei</h3>
+        <p>Chinese contemporary artist known for innovative sculptures and installations.</p>
+        <div class="artist-gallery">
+          <img src="images/ai.jpg" alt="Ai Weiwei artwork: Conceptual installation">
+          <img src="images/ai2.jpg" alt="Ai Weiwei artwork: Forever Bicycles">
+        </div>
+      </article>
+      <!-- Artist 2 -->
+      <article class="artist-item" tabindex="0">
+        <h3>Yayoi Kusama</h3>
+        <p>Japanese visual artist celebrated for immersive installations and signature polka dots.</p>
+        <div class="artist-gallery">
+          <img src="images/Kusama_Infinity_Mirrored_Room_Love_Forever-1024x683.jpg" alt="Yayoi Kusama artwork: Infinity mirror room">
+          <img src="images/polka.avif" alt="Yayoi Kusama artwork: Polka dot sculpture">
+        </div>
+      </article>
+      <!-- Artist 3 -->
+      <article class="artist-item" tabindex="0">
+        <h3>Kehinde Wiley</h3>
+        <p>Renowned contemporary portraitist challenging traditional art narratives.</p>
+        <div class="artist-gallery">
+          <img src="images/obama_cover-760x557.jpg" alt="Kehinde Wiley artwork: Bold portrait">
+          <img src="images/wiley-portrait-head.jpg" alt="Kehinde Wiley artwork: Vibrant background portrait">
+        </div>
+      </article>
+    </div>
+  </section>
+  
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Submit Event Modal -->
+  <div id="submit-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="submit-modal-title">
+    <div class="modal-content">
+      <button class="close-modal" id="close-submit-modal" aria-label="Close event submission form">&times;</button>
+      <h2 id="submit-modal-title">Submit Your Event</h2>
+      <form id="submit-event-form">
+        <label for="event-title">Event Title:</label>
+        <input type="text" id="event-title" name="event-title" required>
+  
+        <label for="event-date">Date:</label>
+        <input type="date" id="event-date" name="event-date" required>
+  
+        <label for="event-location">Location:</label>
+        <input type="text" id="event-location" name="event-location" required>
+  
+        <label for="event-description">Description:</label>
+        <textarea id="event-description" name="event-description" rows="4" required></textarea>
+  
+        <button type="submit" class="primary-button">Submit Event</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Blog Section -->
+  <section id="blog">
+    <h2>Latest in Arts & Culture</h2>
+    <div class="blog-posts">
+      <article class="blog-post">
+        <img src="images/chadbos.avif" alt="Local art festival highlights">
+        <h3>Local Art Festival 2025 Recap</h3>
+        <p>A look back at the highlights of our annual art festival, featuring interviews and photos...</p>
+        <a href="blog/post1.html" class="read-more">Read More</a>
+      </article>
+      <article class="blog-post">
+        <img src="images/gall.avif" alt="Exhibition of contemporary art">
+        <h3>Contemporary Art Exhibit</h3>
+        <p>An overview of the latest contemporary art exhibit at the Community Art Center...</p>
+        <a href="blog/post2.html" class="read-more">Read More</a>
+      </article>
+      <!-- Additional posts can be added in a similar format -->
+    </div>
+    <!-- Newsletter Signup -->
+    <div id="newsletter-signup">
+      <h3>Subscribe to Our Newsletter</h3>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Enter your email" required>
+        <button type="submit" class="primary-button">Subscribe</button>
+      </form>
+    </div>
+  </section>  
+
+  <!-- Social Media Feed Section -->
+  <section id="social-feed">
+    <h2>Community Social Media</h2>
+    <!-- LightWidget WIDGET -->
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+    <iframe src="//lightwidget.com/widgets/a092097226b958cf84d0ab1fe4bd9a64.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Community Arts & Culture Portal</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
